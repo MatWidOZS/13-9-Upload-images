@@ -24,6 +24,9 @@ function start() {
 			case '/style.css':
 				handlers.styles(request, response);
 				break;
+			case '/background.jpeg':
+				handlers.background(request, response);
+				break;
 			default:
 				handlers.error(request, response);
 		}

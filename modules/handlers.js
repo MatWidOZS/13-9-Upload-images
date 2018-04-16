@@ -43,3 +43,11 @@ exports.styles = function(request, response) {
 		response.end();
 	});
 }
+
+exports.background = function(request, response) {
+	fs.readFile('templates/background.jpeg', function(err, file) {
+		response.writeHead(200, {'Content-Type': 'image/jpeg'});
+		response.write(file, 'binary');
+		response.end();
+	});
+}
