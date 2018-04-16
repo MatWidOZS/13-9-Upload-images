@@ -35,3 +35,11 @@ exports.show = function(request, response) {
 		response.end();
 	});
 }
+
+exports.styles = function(request, response) {
+	fs.readFile('templates/style.css', function(err, file) {
+		response.writeHead(200, {'Content-Type': 'text/css; charset=utf-8'});
+		response.write(file, 'binary');
+		response.end();
+	});
+}
